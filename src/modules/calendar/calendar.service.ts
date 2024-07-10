@@ -85,8 +85,8 @@ export class CalendarService {
 
     let lastMonday = lastDayOfMonth.startOf('isoWeek');
 
-    if (lastMonday.month() !== lastDayOfMonth.month()) {
-      lastMonday = lastMonday.add(1, 'week');
+    if (lastMonday.clone().add(4, 'days').month() !== lastDayOfMonth.month()) {
+      lastMonday = lastMonday.subtract(1, 'week');
     }
 
     let weekdays = [];
